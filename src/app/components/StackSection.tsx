@@ -1,5 +1,12 @@
+import Section from "./Section";
+import SectionHeader from "./SectionHeader";
+
 const StackSection = () => {
-  return <section id="stack">StackSection</section>;
+  return (
+    <Section>
+      <SectionHeader header="stack." />
+    </Section>
+  );
 };
 
 export default StackSection;

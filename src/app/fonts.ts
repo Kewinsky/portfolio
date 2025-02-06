@@ -7,5 +7,6 @@ export const newsreader = Newsreader({
 
 export const montserrat = Montserrat({
   subsets: ["latin"],
+  weight: ["100"],
   display: "swap",
 });

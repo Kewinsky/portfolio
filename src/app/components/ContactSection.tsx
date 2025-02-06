@@ -1,5 +1,12 @@
+import Section from "./Section";
+import SectionHeader from "./SectionHeader";
+
 const ContactSection = () => {
-  return <section id="contact">ContactSection</section>;
+  return (
+    <Section>
+      <SectionHeader header="contact." />
+    </Section>
+  );
 };
 
 export default ContactSection;

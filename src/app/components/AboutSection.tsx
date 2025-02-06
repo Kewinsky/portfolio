@@ -1,5 +1,12 @@
+import Section from "./Section";
+import SectionHeader from "./SectionHeader";
+
 const AboutSection = () => {
-  return <section id="about">AboutSection</section>;
+  return (
+    <Section>
+      <SectionHeader header="about." />
+    </Section>
+  );
 };
 
 export default AboutSection;
