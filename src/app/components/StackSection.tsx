@@ -1,5 +1,5 @@
 const StackSection = () => {
-  return <div>StackSection</div>;
+  return <section id="stack">StackSection</section>;
 };
 
 export default StackSection;
