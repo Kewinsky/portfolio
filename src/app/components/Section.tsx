@@ -1,8 +1,17 @@
 import React, { ReactNode } from "react";
 
-const Section = ({ children }: { children: ReactNode }) => {
+interface SectionProps {
+  id: string;
+  header: string;
+  children: ReactNode;
+}
+
+const Section = ({ id, header, children }: SectionProps) => {
   return (
-    <section className="flex flex-col justify-center text-center mb-16">
+    <section id={id} className="py-12 md:py-24 lg:py-32">
+      <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center">
+        {header}
+      </h2>
       {children}
     </section>
   );

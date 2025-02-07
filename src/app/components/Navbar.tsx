@@ -1,35 +1,34 @@
-import { Menu } from "lucide-react";
-import { newsreader } from "../fonts";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const Navbar = () => {
   const routes = ["projects", "about", "contact"];
 
   return (
-    <nav className={`navbar w-full text-center p-0 ${newsreader.className}`}>
-      <div className="navbar-start">
-        <a href="home" className="text-3xl p-0">
-          portfolio.
-        </a>
-      </div>
-      <div className="navbar-center">
-        <div className="hidden lg:flex">
-          <ul className="menu menu-horizontal p-0 text-3xl">
+    <header className="px-4 md:px-20 sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="flex h-14 items-center">
+        <div className="mr-4 hidden md:flex">
+          <Link className="mr-6 flex items-center space-x-2" href="/">
+            <span className="hidden font-bold sm:inline-block">John.dev</span>
+          </Link>
+          <nav className="flex items-center space-x-6 text-sm font-medium">
             {routes.map((route) => (
-              <li key={route} className="mx-14">
-                <a href={`#${route}`} className="p-0">
-                  {route}.
-                </a>
-              </li>
+              <Link
+                key={route}
+                href={`#${route}`}
+                className="transition-colors hover:text-foreground/80"
+              >
+                {route}.
+              </Link>
             ))}
-          </ul>
+          </nav>
+        </div>
+        <div className="ml-auto">
+          <ThemeToggle />
         </div>
       </div>
-      <div className="navbar-end">
-        <div className="lg:hidden">
-          <Menu />
-        </div>
-      </div>
-    </nav>
+    </header>
   );
 };
 

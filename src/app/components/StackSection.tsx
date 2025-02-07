@@ -1,10 +1,10 @@
 import Section from "./Section";
-import SectionHeader from "./SectionHeader";
+import TechStack from "./tech-stack";
 
 const StackSection = () => {
   return (
-    <Section>
-      <SectionHeader header="stack." />
+    <Section id="stack" header="stack.">
+      <TechStack />
     </Section>
   );
 };
