@@ -1,13 +1,13 @@
 "use client";
 
 import { Textarea } from "@/components/ui/textarea";
-import { submitContactForm } from "../actions";
 import Section from "./Section";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useState } from "react";
+import axios from "axios";
 
 // Define types for form data
 type FormData = {
@@ -30,12 +30,14 @@ const ContactSection = () => {
   const onSubmit: SubmitHandler<FormData> = async (formData) => {
     setPending(true);
     try {
-      const formDataObj = new FormData();
-      formDataObj.append("name", formData.name);
-      formDataObj.append("email", formData.email);
-      formDataObj.append("message", formData.message);
-      const response = await submitContactForm(formDataObj);
-      setMessage(response.message);
+      const response = await axios.post("/api/submitContactForm", formData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      console.log(response.data);
+
+      setMessage(response.data.message);
       reset();
     } catch {
       setMessage("Something went wrong. Please try again.");
