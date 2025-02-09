@@ -16,7 +16,7 @@ const ProjectsSection = () => {
           tags={["Next.js", "Prisma", "Stripe"]}
         />
         <ProjectCard
-          title="Task Management App"
+          title="Expense Tracker App"
           description="A real-time task management application with team collaboration features."
           image="/placeholder.svg?height=400&width=600"
           link="https://github.com"
