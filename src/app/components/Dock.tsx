@@ -2,7 +2,7 @@
 
 import { DockComponent, DockIcon } from "@/components/magicui/dock";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
   Tooltip,
