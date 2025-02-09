@@ -5,6 +5,7 @@ import ContactSection from "./components/ContactSection";
 import Navbar from "./components/Navbar";
 import AboutSection from "./components/AboutSection";
 import StackSection from "./components/StackSection";
+import Dock from "./components/Dock";
 
 const Home = () => {
   return (
@@ -17,6 +18,9 @@ const Home = () => {
         <StackSection />
         <ContactSection />
       </main>
+      <div className="sticky bottom-8 z-50 flex justify-center">
+        <Dock />
+      </div>
       <Footer />
     </div>
   );

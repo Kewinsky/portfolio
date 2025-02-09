@@ -2,12 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import { spaceGrotesk } from "./fonts";
 
 export const metadata: Metadata = {
-  title: "John.dev - Full Stack Developer",
+  title: "Kevin Tao Anh - Full Stack Developer",
   description: "Full stack developer portfolio showcasing projects and skills",
 };
 
@@ -21,7 +19,7 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          inter.className
+          spaceGrotesk.className
         )}
       >
         <ThemeProvider

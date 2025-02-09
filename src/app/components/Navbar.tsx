@@ -1,32 +1,36 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { ShinyButton } from "@/components/magicui/shiny-button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Navbar = () => {
-  const routes = ["about", "projects", "stack", "contact"];
+  const routes = ["changelog"];
 
   return (
     <header className="px-4 md:px-20 sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="flex h-14 items-center">
-        <div className="mr-4 hidden md:flex">
-          <Link className="mr-6 flex items-center space-x-2" href="/">
-            <span className="hidden font-bold sm:inline-block">John.dev</span>
+      <div className="flex h-14 items-center justify-between">
+        <div className="flex">
+          <Link className="mr-6" href="https://github.com/Kewinsky">
+            <Avatar className="h-10 w-10">
+              <AvatarImage src="/avatar.JPG" />
+              <AvatarFallback>KTA</AvatarFallback>
+            </Avatar>
           </Link>
-          <nav className="flex items-center space-x-6 text-sm font-medium">
-            {routes.map((route) => (
-              <Link
-                key={route}
-                href={`#${route}`}
-                className="transition-colors hover:text-foreground/80"
-              >
-                {route}.
-              </Link>
-            ))}
-          </nav>
+          <div className="hidden md:flex items-center space-x-6 text-sm font-medium">
+            <nav className="flex items-center space-x-6 text-sm font-medium">
+              {routes.map((route) => (
+                <Link
+                  key={route}
+                  href={`#${route}`}
+                  className="transition-colors hover:text-foreground/80"
+                >
+                  {route}.
+                </Link>
+              ))}
+            </nav>
+          </div>
         </div>
-        <div className="ml-auto">
-          <ThemeToggle />
-        </div>
+
+        <ShinyButton href="#contact">get in touch.</ShinyButton>
       </div>
     </header>
   );

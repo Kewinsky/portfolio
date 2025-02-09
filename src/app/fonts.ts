@@ -1,4 +1,4 @@
-import { Newsreader, Montserrat } from "next/font/google";
+import { Newsreader, Montserrat, Space_Grotesk } from "next/font/google";
 
 export const newsreader = Newsreader({
   subsets: ["latin"],
@@ -7,6 +7,11 @@ export const newsreader = Newsreader({
 
 export const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["100"],
+  weight: ["200", "300", "400"],
   display: "swap",
+});
+
+export const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: "400",
 });
