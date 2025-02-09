@@ -6,7 +6,7 @@ import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 const Header = () => {
   return (
     <WavyBackground className="max-w-4xl mx-auto pb-40">
-      <section id="about" className="py-12 md:py-24 lg:py-32">
+      <section className="py-12 md:py-24 lg:py-32">
         <div>
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
