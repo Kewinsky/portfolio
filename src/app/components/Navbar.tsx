@@ -3,8 +3,6 @@ import { ShinyButton } from "@/components/magicui/shiny-button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Navbar = () => {
-  const routes = ["changelog"];
-
   return (
     <header className="px-4 md:px-20 sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="flex h-14 items-center justify-between">
@@ -15,7 +13,7 @@ const Navbar = () => {
               <AvatarFallback>KTA</AvatarFallback>
             </Avatar>
           </Link>
-          <div className="hidden md:flex items-center space-x-6 text-sm font-medium">
+          {/* <div className="hidden md:flex items-center space-x-6 text-sm font-medium">
             <nav className="flex items-center space-x-6 text-sm font-medium">
               {routes.map((route) => (
                 <Link
@@ -27,7 +25,7 @@ const Navbar = () => {
                 </Link>
               ))}
             </nav>
-          </div>
+          </div> */}
         </div>
 
         <ShinyButton href="#contact">get in touch.</ShinyButton>

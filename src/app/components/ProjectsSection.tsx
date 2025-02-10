@@ -9,25 +9,41 @@ const ProjectsSection = () => {
     <Section id="projects" header="projects.">
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <ProjectCard
-          title="E-commerce Platform"
-          description="A full-stack e-commerce platform built with Next.js, Prisma, and Stripe integration."
-          image="/placeholder.svg?height=400&width=600"
-          link="https://github.com"
-          tags={["Next.js", "Prisma", "Stripe"]}
+          title="ecommerce_app."
+          description="A full-stack e-commerce platform for mechanical keyboard enthusiasts."
+          image="/shop.png"
+          link="https://github.com/Kewinsky/mechanix"
+          tags={[
+            "JavaScript",
+            "React",
+            "Sass",
+            "Java",
+            "Spring Boot",
+            "Hibernate",
+            "MySQL",
+          ]}
         />
         <ProjectCard
-          title="Expense Tracker App"
-          description="A real-time task management application with team collaboration features."
-          image="/placeholder.svg?height=400&width=600"
-          link="https://github.com"
-          tags={["React", "Node.js", "Socket.io"]}
+          title="expense_tracker."
+          description="A full-stack web application for tracking expenses, allowing users to perform CRUD operations and generate reports."
+          image="/tracker.png"
+          link="https://github.com/Kewinsky/expense-tracker"
+          tags={[
+            "JavaScript",
+            "React",
+            "Java",
+            "Spring Boot",
+            "Hibernate",
+            "MySQL",
+            "AWS",
+          ]}
         />
         <ProjectCard
-          title="AI Chat Interface"
-          description="An AI-powered chat interface with natural language processing capabilities."
-          image="/placeholder.svg?height=400&width=600"
-          link="https://github.com"
-          tags={["OpenAI", "Next.js", "TailwindCSS"]}
+          title="react_sandbox."
+          description="A React app designed for practicing and experimenting with various React concepts, technologies, and functionalities."
+          image="/sandbox.png"
+          link="https://github.com/Kewinsky/react-sandbox"
+          tags={["JavaScript", "React", "Vite", "External APIs"]}
         />
       </div>
     </Section>
@@ -50,7 +66,7 @@ const ProjectCard = ({
   tags,
 }: ProjectCardProps) => {
   return (
-    <Card className="overflow-hidden">
+    <Card className="flex flex-col h-full overflow-hidden">
       <div className="relative aspect-video">
         <Image
           src={image || "/placeholder.svg"}
@@ -59,7 +75,7 @@ const ProjectCard = ({
           className="object-cover transition-transform hover:scale-105"
         />
       </div>
-      <CardContent className="p-4">
+      <CardContent className="p-4 flex-grow">
         <h3 className="font-semibold text-xl mb-2">{title}</h3>
         <p className="text-sm text-muted-foreground mb-4">{description}</p>
         <div className="flex flex-wrap gap-2">
@@ -73,7 +89,7 @@ const ProjectCard = ({
           ))}
         </div>
       </CardContent>
-      <CardFooter className="p-4 pt-0">
+      <CardFooter className="p-4 pt-0 mt-auto">
         <Link
           href={link}
           target="_blank"

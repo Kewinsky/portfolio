@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { spaceGrotesk } from "./fonts";
 
 export const metadata: Metadata = {
-  title: "Kevin Tao Anh - full-stack developer.",
+  title: "kta - full-stack developer.",
   description: "Full stack developer portfolio showcasing projects and skills",
 };
 

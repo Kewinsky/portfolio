@@ -8,22 +8,29 @@ const technologies = [
       "React",
       "Next.js",
       "TypeScript",
+      "JavaScript",
       "TailwindCSS",
-      "Redux",
-      "GraphQL",
+      "Rest API",
     ],
   },
   {
     category: "Backend",
-    skills: ["Node.js", "Express", "Python", "Django", "PostgreSQL", "MongoDB"],
+    skills: [
+      "Node.js",
+      "Express",
+      "Spring Boot",
+      "Hibernate",
+      "PostgreSQL",
+      "MySQL",
+    ],
   },
   {
     category: "DevOps",
-    skills: ["Docker", "AWS", "CI/CD", "Git", "Linux", "Nginx"],
+    skills: ["Docker", "AWS", "CI/CD", "Git"],
   },
   {
     category: "Tools",
-    skills: ["VS Code", "Postman", "Figma", "Jest", "GitHub", "Vercel"],
+    skills: ["Jira", "Postman", "Jest", "JUnit", "Mockito", "GitHub", "GitLab"],
   },
 ];
 
