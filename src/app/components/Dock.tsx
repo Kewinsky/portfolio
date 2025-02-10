@@ -53,7 +53,7 @@ const DATA = {
         url: "https://www.linkedin.com/in/kewin-taoanh/",
         icon: Icons.linkedin,
       },
-      email: {
+      Email: {
         name: "Send Email",
         url: "#contact",
         icon: Icons.email,
