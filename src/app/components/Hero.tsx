@@ -1,42 +1,42 @@
-import { TextAnimate } from "@/components/magicui/text-animate";
-import { cn } from "@/lib/utils";
-import { montserrat } from "../fonts";
-import { WordRotate } from "@/components/magicui/word-rotate";
-import { DotPattern } from "@/components/magicui/dot-pattern";
-
-const Header = () => {
-  const words = [
-    "full-stack developer.",
-    "minimalist.",
-    "car enthusiast.",
-    "dog lover.",
-  ];
+const Hero = () => {
   return (
-    <div className="h-screen flex flex-col items-center justify-center max-w-4xl mx-auto pb-40">
-      <section className={cn("py-12 md:py-24 lg:py-32", montserrat.className)}>
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <TextAnimate
-              animation="blurIn"
-              as="h1"
-              className="text-3xl font-light tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none"
-            >
-              {`< kevin_tao_anh />`}
-            </TextAnimate>
-
-            <div className="mx-auto max-w-[700px] text-gray-600 md:text-xl dark:text-gray-300">
-              <WordRotate words={words} />
+    <section
+      id="hero"
+      className="min-h-screen flex items-center justify-center py-20"
+    >
+      <div className="container mx-auto px-4 md:px-20">
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
+          <div className="flex-1 w-full md:w-auto">
+            <div className="space-y-4 text-center md:text-left">
+              <h1 className="text-6xl md:text-8xl font-bold leading-tight">
+                Kevin
+                <br />
+              </h1>
+              <h1 className="text-6xl md:text-8xl font-bold leading-tight">
+                Tao Anh
+              </h1>
+              <div className="flex items-center justify-center md:justify-start gap-4 mt-6">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                  <span className="text-sm md:text-base text-muted-foreground">
+                    Available for opportunities
+                  </span>
+                </div>
+              </div>
             </div>
-            <DotPattern
-              className={cn(
-                "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
-              )}
-            />
+          </div>
+          <div className="flex flex-col gap-2 text-center md:text-right">
+            <div className="text-sm md:text-base text-muted-foreground">
+              Based In Gdańsk, Poland
+            </div>
+            <div className="text-sm md:text-base font-medium">
+              Software Engineer
+            </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
-export default Header;
+export default Hero;

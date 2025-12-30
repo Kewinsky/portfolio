@@ -5,7 +5,8 @@ import ContactSection from "./components/ContactSection";
 import Navbar from "./components/Navbar";
 import AboutSection from "./components/AboutSection";
 import StackSection from "./components/StackSection";
-import Dock from "./components/Dock";
+import ExperienceSection from "./components/ExperienceSection";
+import LookingForSection from "./components/LookingForSection";
 
 const Home = () => {
   return (
@@ -14,13 +15,12 @@ const Home = () => {
       <Hero />
       <main className="container mx-auto px-4 md:px-20">
         <AboutSection />
+        <ExperienceSection />
         <ProjectsSection />
         <StackSection />
+        <LookingForSection />
         <ContactSection />
       </main>
-      <div className="sticky bottom-8 z-50 flex justify-center">
-        <Dock />
-      </div>
       <Footer />
     </div>
   );

@@ -1,5 +1,5 @@
-import { Card } from "@/components/ui/card";
 import Section from "./Section";
+import { Card } from "@/components/ui/card";
 
 const technologies = [
   {
@@ -10,7 +10,8 @@ const technologies = [
       "TypeScript",
       "JavaScript",
       "TailwindCSS",
-      "Rest API",
+      "Blazor",
+      "C#",
     ],
   },
   {
@@ -25,8 +26,8 @@ const technologies = [
     ],
   },
   {
-    category: "DevOps",
-    skills: ["Docker", "AWS", "CI/CD", "Git"],
+    category: "DevOps & Cloud",
+    skills: ["Docker", "Kubernetes", "AWS", "Azure DevOps", "CI/CD", "Git"],
   },
   {
     category: "Tools",
@@ -37,19 +38,21 @@ const technologies = [
 const StackSection = () => {
   return (
     <Section id="stack" header="stack.">
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {technologies.map((tech) => (
           <Card key={tech.category} className="p-6">
-            <h3 className="text-lg font-semibold mb-4">{tech.category}</h3>
-            <div className="flex flex-wrap gap-2">
-              {tech.skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="inline-flex items-center rounded-md bg-primary/10 px-2 py-1 text-sm font-medium text-primary ring-1 ring-inset ring-primary/20"
-                >
-                  {skill}
-                </span>
-              ))}
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold mb-4">{tech.category}</h3>
+              <div className="flex flex-wrap gap-2">
+                {tech.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="inline-block px-3 py-1.5 bg-muted rounded-md text-sm border border-border cursor-default"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </Card>
         ))}

@@ -1,49 +1,33 @@
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+"use client";
+
 import Section from "./Section";
-import Image from "next/image";
 import Link from "next/link";
-import { Github } from "lucide-react";
 
 const ProjectsSection = () => {
   return (
     <Section id="projects" header="projects.">
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <ProjectCard
-          title="ecommerce_app."
-          description="A full-stack e-commerce platform for mechanical keyboard enthusiasts."
-          image="/shop.png"
-          link="https://github.com/Kewinsky/mechanix"
-          tags={[
-            "JavaScript",
-            "React",
-            "Sass",
-            "Java",
-            "Spring Boot",
-            "Hibernate",
-            "MySQL",
-          ]}
+          title="Finwise"
+          description="Enhanced expense tracking platform with AI-powered insights and robust financial reporting. Built as an improved version of Expense Tracker with modern tech stack and OpenAI integration."
+          githubLink="https://github.com/Kewinsky/finwise"
+          liveDemoLink="https://finwise-demo.vercel.app"
+          tags={["Next.js", "TypeScript", "Supabase", "OpenAI"]}
+          featured
         />
         <ProjectCard
-          title="expense_tracker."
-          description="A full-stack web application for tracking expenses, allowing users to perform CRUD operations and generate reports."
-          image="/tracker.png"
-          link="https://github.com/Kewinsky/expense-tracker"
-          tags={[
-            "JavaScript",
-            "React",
-            "Java",
-            "Spring Boot",
-            "Hibernate",
-            "MySQL",
-            "AWS",
-          ]}
+          title="Expense Tracker"
+          description="Full-stack expense management application with CRUD operations and reporting capabilities. Deployed on AWS with robust backend architecture."
+          githubLink="https://github.com/Kewinsky/expense-tracker"
+          tags={["React", "Spring Boot", "MySQL", "AWS"]}
+          fullStack
         />
         <ProjectCard
-          title="react_sandbox."
-          description="A React app designed for practicing and experimenting with various React concepts, technologies, and functionalities."
-          image="/sandbox.png"
-          link="https://github.com/Kewinsky/react-sandbox"
-          tags={["JavaScript", "React", "Vite", "External APIs"]}
+          title="E-commerce App"
+          description="Frontend e-commerce platform for mechanical keyboard enthusiasts. Clean, responsive design with modern React patterns."
+          githubLink="https://github.com/Kewinsky/mechanix"
+          tags={["React", "JavaScript", "Sass"]}
+          frontend
         />
       </div>
     </Section>
@@ -53,53 +37,81 @@ const ProjectsSection = () => {
 interface ProjectCardProps {
   title: string;
   description: string;
-  image: string;
-  link: string;
+  githubLink: string;
+  liveDemoLink?: string;
   tags: string[];
+  featured?: boolean;
+  fullStack?: boolean;
+  frontend?: boolean;
 }
 
 const ProjectCard = ({
   title,
   description,
-  image,
-  link,
+  githubLink,
+  liveDemoLink,
   tags,
+  featured,
+  fullStack,
+  frontend,
 }: ProjectCardProps) => {
   return (
-    <Card className="flex flex-col h-full overflow-hidden">
-      <div className="relative aspect-video">
-        <Image
-          src={image || "/placeholder.svg"}
-          alt={title}
-          fill
-          className="object-cover transition-transform hover:scale-105"
-        />
-      </div>
-      <CardContent className="p-4 flex-grow">
-        <h3 className="font-semibold text-xl mb-2">{title}</h3>
-        <p className="text-sm text-muted-foreground mb-4">{description}</p>
-        <div className="flex flex-wrap gap-2">
+    <div className="block p-8 border rounded-lg bg-card hover:bg-accent/50 transition-colors h-full">
+      <div className="flex flex-col h-full gap-4">
+        <div className="flex items-center gap-4">
+          <h3 className="text-2xl font-semibold">{title}</h3>
+          {featured && (
+            <span className="inline-block px-3 py-1 bg-primary/20 rounded text-xs font-semibold">
+              Featured
+            </span>
+          )}
+          {fullStack && (
+            <span className="inline-block px-3 py-1 bg-primary/20 rounded text-xs font-semibold">
+              Full-Stack
+            </span>
+          )}
+          {frontend && (
+            <span className="inline-block px-3 py-1 bg-primary/20 rounded text-xs font-semibold">
+              Frontend
+            </span>
+          )}
+        </div>
+        <p className="text-muted-foreground leading-relaxed flex-grow">
+          {description}
+        </p>
+        <div className="flex flex-wrap gap-2 items-start">
           {tags.map((tag) => (
             <span
               key={tag}
-              className="inline-flex items-center rounded-md bg-muted px-2 py-1 text-xs font-medium ring-1 ring-inset ring-gray-500/10"
+              className="inline-block px-3 py-1 bg-muted rounded text-xs"
             >
               {tag}
             </span>
           ))}
         </div>
-      </CardContent>
-      <CardFooter className="p-4 pt-0 mt-auto">
-        <Link
-          href={link}
-          target="_blank"
-          className="inline-flex items-center gap-2 text-sm hover:underline"
-        >
-          <Github className="h-4 w-4" />
-          View on GitHub
-        </Link>
-      </CardFooter>
-    </Card>
+        <div className="mt-auto text-sm text-muted-foreground pt-4">
+          {liveDemoLink && (
+            <Link
+              href={liveDemoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mr-4 underline hover:text-foreground"
+            >
+              Live Demo →
+            </Link>
+          )}
+          <Link
+            href={githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-foreground"
+          >
+            GitHub →
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 };
+
 export default ProjectsSection;
