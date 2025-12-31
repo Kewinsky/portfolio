@@ -1,5 +1,4 @@
 import Section from "./Section";
-import { Card } from "@/components/ui/card";
 
 const technologies = [
   {
@@ -38,23 +37,23 @@ const technologies = [
 const StackSection = () => {
   return (
     <Section id="stack" header="stack.">
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-8 md:gap-12 md:grid-cols-2 lg:grid-cols-4 px-4 md:px-8">
         {technologies.map((tech) => (
-          <Card key={tech.category} className="p-6">
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold mb-4">{tech.category}</h3>
-              <div className="flex flex-wrap gap-2">
-                {tech.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="inline-block px-3 py-1.5 bg-muted rounded-md text-sm border border-border cursor-default"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+          <div key={tech.category} className="space-y-4">
+            <h3 className="text-lg md:text-xl font-semibold">
+              {tech.category}
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {tech.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="inline-block px-3 py-1 text-xs md:text-sm bg-muted rounded border border-border"
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
-          </Card>
+          </div>
         ))}
       </div>
     </Section>

@@ -1,10 +1,11 @@
 import Section from "./Section";
+import Image from "next/image";
 
 const AboutSection = () => {
   return (
     <Section id="about" header="about.">
-      <div className="max-w-3xl">
-        <div className="space-y-6 leading-relaxed">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-12 items-start">
+        <div className="space-y-6 md:space-y-8 text-base md:text-lg leading-relaxed text-muted-foreground px-4 md:px-8">
           <p>
             I&apos;m a Software Engineer with over 4 years of experience
             building applications that actually work in production. I&apos;ve
@@ -27,6 +28,15 @@ const AboutSection = () => {
             developer—it keeps me curious and helps me think about problems from
             different angles.
           </p>
+        </div>
+        <div className="relative w-full max-w-[300px] mx-auto md:max-w-none md:w-64 lg:w-80 aspect-square">
+          <Image
+            src="/avatar.jpg"
+            alt="Kevin Tao Anh"
+            fill
+            className="object-cover border border-border"
+            priority
+          />
         </div>
       </div>
     </Section>

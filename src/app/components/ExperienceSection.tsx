@@ -9,11 +9,12 @@ const ExperienceSection = () => {
       description:
         "Developing a Next.js application for patients and doctors to track laboratory sample collection. Working on a contract basis to build scalable healthcare solutions with modern web technologies.",
       tasks: [
-        "Next.js, React",
-        "Docker, Kubernetes",
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Docker",
+        "Kubernetes",
         "Azure DevOps",
-        "Building patient and doctor-facing applications",
-        "Laboratory sample tracking system",
       ],
     },
     {
@@ -23,11 +24,13 @@ const ExperienceSection = () => {
       description:
         "Developed the Adult Social Care system for gov.uk, enabling reimbursement of upskilling training for UK citizens. Built a comprehensive platform with focus on accessibility and government compliance standards.",
       tasks: [
-        "TypeScript, Node.js, Express.js",
+        "Node.js",
+        "Express.js",
+        "TypeScript",
         "GovUK Framework",
-        "Redis, PostgreSQL",
-        "Docker, AWS (Lambda, API Gateway, Aurora PostgreSQL)",
-        "Government digital services",
+        "PostgreSQL",
+        "Docker",
+        "AWS",
       ],
     },
     {
@@ -37,11 +40,12 @@ const ExperienceSection = () => {
       description:
         "Worked on a team responsible for one of the microservices in a financial screening platform. The system consisted of 6 microservices for comprehensive client and transaction screenings on a global scale.",
       tasks: [
-        "Java 17, Spring Boot",
-        "Apache Kafka, PostgreSQL",
-        "AWS (EC2, SQS, S3, CloudWatch)",
-        "Microservices architecture",
-        "Message reliability and monitoring",
+        "Java 17",
+        "Spring Boot",
+        "Apache Kafka",
+        "PostgreSQL",
+        "AWS",
+        "Microservices",
       ],
     },
     {
@@ -50,42 +54,44 @@ const ExperienceSection = () => {
       company: "Nsure (Insurance)",
       description:
         "Developed a full-stack web application for a digital insurance agency. Built a platform that enables users to compare quotes and buy home and auto insurance online in minutes, competing with 60+ top-rated insurers.",
-      tasks: [
-        "C# .NET, Blazor",
-        "Xamarin",
-        "MySQL",
-        "Azure DevOps",
-        "Full-stack web development",
-      ],
+      tasks: ["C# .NET", "Blazor", "Xamarin", "MySQL", "Azure DevOps"],
     },
   ];
 
   return (
     <Section id="experience" header="experience.">
-      <div className="max-w-4xl mx-auto space-y-12">
+      <div className="max-w-5xl space-y-16 md:space-y-20 px-4 md:px-8">
         {experiences.map((exp, index) => (
-          <div key={index} className="relative">
-            <div className="grid md:grid-cols-[200px_1fr] mb-6">
-              <div className="text-sm text-muted-foreground">{exp.date}</div>
-              <div>
-                <h3 className="text-2xl font-semibold mb-2">{exp.position}</h3>
-                <p className="text-muted-foreground mb-4">{exp.company}</p>
-              </div>
+          <div
+            key={index}
+            className="grid md:grid-cols-[200px_1fr] gap-6 md:gap-12"
+          >
+            <div className="text-sm md:text-base text-muted-foreground">
+              {exp.date}
             </div>
-            <div className="md:ml-[200px]">
-              <p className="mb-4 leading-relaxed">{exp.description}</p>
-              <div className="space-y-2">
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl md:text-2xl font-semibold mb-1">
+                  {exp.position}
+                </h3>
+                <p className="text-sm md:text-base text-muted-foreground">
+                  {exp.company}
+                </p>
+              </div>
+              <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
+                {exp.description}
+              </p>
+              <div className="flex flex-wrap gap-2 pt-2">
                 {exp.tasks.map((task, taskIndex) => (
-                  <div key={taskIndex} className="flex items-start gap-3">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-foreground flex-shrink-0" />
-                    <span className="text-sm">{task}</span>
-                  </div>
+                  <span
+                    key={taskIndex}
+                    className="inline-block px-3 py-1 text-xs md:text-sm bg-muted rounded border border-border"
+                  >
+                    {task}
+                  </span>
                 ))}
               </div>
             </div>
-            {index < experiences.length - 1 && (
-              <div className="mt-8 pt-8 border-t" />
-            )}
           </div>
         ))}
       </div>
