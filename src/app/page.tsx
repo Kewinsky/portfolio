@@ -52,7 +52,7 @@ const Home = () => {
 
       <div className="container mx-auto px-4 md:px-20 relative">
         <div className="relative z-10">
-          <SectionWrapper showSeparator={false}>
+          <SectionWrapper>
             <Hero />
           </SectionWrapper>
 

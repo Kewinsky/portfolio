@@ -1,4 +1,7 @@
+"use client";
+
 import Section from "./Section";
+import ScrollReveal from "./ScrollReveal";
 
 const ExperienceSection = () => {
   const experiences = [
@@ -62,37 +65,41 @@ const ExperienceSection = () => {
     <Section id="experience" header="experience.">
       <div className="max-w-5xl space-y-16 md:space-y-20 px-4 md:px-8">
         {experiences.map((exp, index) => (
-          <div
+          <ScrollReveal
             key={index}
-            className="grid md:grid-cols-[200px_1fr] gap-6 md:gap-12"
+            direction="up"
+            delay={index * 0.1}
+            distance={30}
           >
-            <div className="text-sm md:text-base text-muted-foreground">
-              {exp.date}
-            </div>
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-xl md:text-2xl font-semibold mb-1">
-                  {exp.position}
-                </h3>
-                <p className="text-sm md:text-base text-muted-foreground">
-                  {exp.company}
+            <div className="grid md:grid-cols-[200px_1fr] gap-6 md:gap-12">
+              <div className="text-sm md:text-base text-muted-foreground">
+                {exp.date}
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-xl md:text-2xl font-semibold mb-1">
+                    {exp.position}
+                  </h3>
+                  <p className="text-sm md:text-base text-muted-foreground">
+                    {exp.company}
+                  </p>
+                </div>
+                <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
+                  {exp.description}
                 </p>
-              </div>
-              <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
-                {exp.description}
-              </p>
-              <div className="flex flex-wrap gap-2 pt-2">
-                {exp.tasks.map((task, taskIndex) => (
-                  <span
-                    key={taskIndex}
-                    className="inline-block px-3 py-1 text-xs md:text-sm bg-muted rounded border border-border"
-                  >
-                    {task}
-                  </span>
-                ))}
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {exp.tasks.map((task, taskIndex) => (
+                    <span
+                      key={taskIndex}
+                      className="inline-block px-3 py-1 text-xs md:text-sm bg-muted rounded border border-border"
+                    >
+                      {task}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         ))}
       </div>
     </Section>
