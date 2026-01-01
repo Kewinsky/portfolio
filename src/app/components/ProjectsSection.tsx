@@ -69,7 +69,7 @@ const ProjectCard = ({
   return (
     <div className="flex flex-col gap-4 p-6 md:p-8 h-full relative">
       <div className="flex flex-col gap-4 flex-grow">
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-row items-center gap-2">
           <h3 className="text-xl md:text-2xl font-semibold">{title}</h3>
           <div className="flex gap-2 flex-wrap">
             {featured && (

@@ -31,7 +31,7 @@ const AboutSection = () => {
         </div>
         <div className="relative w-full max-w-[300px] mx-auto md:max-w-none md:w-64 lg:w-80 aspect-square">
           <Image
-            src="/avatar.jpg"
+            src="/avatar.JPG"
             alt="Kevin Tao Anh"
             fill
             className="object-cover border border-border"
