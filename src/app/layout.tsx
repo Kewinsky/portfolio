@@ -90,7 +90,7 @@ const structuredData = {
   name: "Kevin Tao Anh",
   jobTitle: "Software Engineer",
   url: siteUrl,
-  image: `${siteUrl}/avatar.JPG`,
+  image: `${siteUrl}/avatar.jpg`,
   sameAs: [
     "https://www.linkedin.com/in/kewin-taoanh/",
     "https://github.com/Kewinsky",

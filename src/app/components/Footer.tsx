@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer className="py-8 md:py-12">
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground px-4 md:px-8">
-        <p>© 2025 Kevin Tao Anh. All rights reserved.</p>
+        <p>© 2026 Kevin Tao Anh. All rights reserved.</p>
         <a
           href="#hero"
           onClick={handleScrollToTop}

@@ -1,16 +1,27 @@
+"use client";
+
 import React, { ReactNode } from "react";
+import ScrollReveal from "./ScrollReveal";
 
 interface SectionWrapperProps {
   children: ReactNode;
   showSeparator?: boolean;
+  delay?: number;
 }
 
 const SectionWrapper = ({
   children,
   showSeparator = true,
+  delay = 0,
 }: SectionWrapperProps) => {
   return (
-    <div className="relative">
+    <ScrollReveal
+      direction="up"
+      distance={40}
+      delay={delay}
+      duration={0.7}
+      className="relative"
+    >
       {children}
       {showSeparator && (
         <>
@@ -34,7 +45,7 @@ const SectionWrapper = ({
           </div>
         </>
       )}
-    </div>
+    </ScrollReveal>
   );
 };
 

@@ -3,39 +3,46 @@
 import Section from "./Section";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
+import ScrollReveal from "./ScrollReveal";
 
 const ProjectsSection = () => {
   return (
     <Section id="projects" header="projects.">
       <div className="grid grid-cols-1 lg:grid-cols-3">
-        <ProjectCard
-          title="Finwise"
-          description="Enhanced expense tracking platform with AI-powered insights and robust financial reporting. Built as an improved version of Expense Tracker with modern tech stack and OpenAI integration."
-          githubLink="https://github.com/Kewinsky/finwise"
-          liveDemoLink="https://finwise-demo.vercel.app"
-          tags={["Next.js", "TypeScript", "Supabase", "OpenAI"]}
-          featured
-          showBottomSeparator={true}
-          showRightSeparator={true}
-        />
-        <ProjectCard
-          title="Expense Tracker"
-          description="Full-stack expense management application with CRUD operations and reporting capabilities. Deployed on AWS with robust backend architecture."
-          githubLink="https://github.com/Kewinsky/expense-tracker"
-          tags={["React", "Spring Boot", "MySQL", "AWS"]}
-          fullStack
-          showBottomSeparator={true}
-          showRightSeparator={true}
-        />
-        <ProjectCard
-          title="E-commerce App"
-          description="Frontend e-commerce platform for mechanical keyboard enthusiasts. Clean, responsive design with modern React patterns."
-          githubLink="https://github.com/Kewinsky/mechanix"
-          tags={["React", "JavaScript", "Sass"]}
-          frontend
-          showBottomSeparator={false}
-          showRightSeparator={false}
-        />
+        <ScrollReveal direction="up" delay={0.1} distance={30}>
+          <ProjectCard
+            title="Finwise"
+            description="Enhanced expense tracking platform with AI-powered insights and robust financial reporting. Built as an improved version of Expense Tracker with modern tech stack and OpenAI integration."
+            githubLink="https://github.com/Kewinsky/finwise"
+            liveDemoLink="https://finwise-demo.vercel.app"
+            tags={["Next.js", "TypeScript", "Supabase", "OpenAI"]}
+            featured
+            showBottomSeparator={true}
+            showRightSeparator={true}
+          />
+        </ScrollReveal>
+        <ScrollReveal direction="up" delay={0.2} distance={30}>
+          <ProjectCard
+            title="Expense Tracker"
+            description="Full-stack expense management application with CRUD operations and reporting capabilities. Deployed on AWS with robust backend architecture."
+            githubLink="https://github.com/Kewinsky/expense-tracker"
+            tags={["React", "Spring Boot", "MySQL", "AWS"]}
+            fullStack
+            showBottomSeparator={true}
+            showRightSeparator={true}
+          />
+        </ScrollReveal>
+        <ScrollReveal direction="up" delay={0.3} distance={30}>
+          <ProjectCard
+            title="E-commerce App"
+            description="Frontend e-commerce platform for mechanical keyboard enthusiasts. Clean, responsive design with modern React patterns."
+            githubLink="https://github.com/Kewinsky/mechanix"
+            tags={["React", "JavaScript", "Sass"]}
+            frontend
+            showBottomSeparator={false}
+            showRightSeparator={false}
+          />
+        </ScrollReveal>
       </div>
     </Section>
   );
