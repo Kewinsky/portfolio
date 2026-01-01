@@ -19,25 +19,25 @@ const AboutSection = () => {
             </p>
             <p>
               Right now I&apos;m working as an Associate Software Engineer, but
-              I&apos;m always looking for new challenges. I enjoy diving into new
-              technologies and domains, and I&apos;m pretty good at getting up to
-              speed quickly. Whether it&apos;s a new framework, a different
-              architecture, or understanding a completely new business domain,
-              I&apos;m up for it.
+              I&apos;m always looking for new challenges. I enjoy diving into
+              new technologies and domains, and I&apos;m pretty good at getting
+              up to speed quickly. Whether it&apos;s a new framework, a
+              different architecture, or understanding a completely new business
+              domain, I&apos;m up for it.
             </p>
             <p>
-              When I&apos;m not coding, you&apos;ll probably find me exploring new
-              places, trying out different cuisines, or working on side projects.
-              I believe that having interests outside of work makes me a better
-              developer—it keeps me curious and helps me think about problems from
-              different angles.
+              When I&apos;m not coding, you&apos;ll probably find me exploring
+              new places, trying out different cuisines, or working on side
+              projects. I believe that having interests outside of work makes me
+              a better developer—it keeps me curious and helps me think about
+              problems from different angles.
             </p>
           </div>
         </ScrollReveal>
         <ScrollReveal direction="left" delay={0.2} distance={30}>
           <div className="relative w-full max-w-[300px] mx-auto md:max-w-none md:w-64 lg:w-80 aspect-square">
             <Image
-              src="/avatar.jpg"
+              src="/avatar.JPG"
               alt="Kevin Tao Anh"
               fill
               className="object-cover border border-border"
