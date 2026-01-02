@@ -90,11 +90,21 @@ const ProjectCard = ({
         </div>
         <div className="flex gap-4 text-sm text-muted-foreground pt-4 mt-auto">
           {liveDemoLink && (
-            <Link href={liveDemoLink} target="_blank" rel="noopener noreferrer">
+            <Link
+              href={liveDemoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
               Live Demo →
             </Link>
           )}
-          <Link href={githubLink} target="_blank" rel="noopener noreferrer">
+          <Link
+            href={githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors"
+          >
             GitHub →
           </Link>
         </div>

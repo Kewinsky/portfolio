@@ -20,28 +20,28 @@ const LookingForSection = () => {
               <li className="flex items-start gap-3">
                 <Check className="mt-1 w-5 h-5 text-foreground flex-shrink-0" />
                 <span>
-                  Working with modern tech stacks — I like staying current and
+                  Working with modern tech stacks - I like staying current and
                   learning new things
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Check className="mt-1 w-5 h-5 text-foreground flex-shrink-0" />
                 <span>
-                  Teams where I can both contribute and learn — collaboration
+                  Teams where I can both contribute and learn - collaboration
                   over competition
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Check className="mt-1 w-5 h-5 text-foreground flex-shrink-0" />
                 <span>
-                  Projects that actually make a difference — I want to build
+                  Projects that actually make a difference - I want to build
                   things people use
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Check className="mt-1 w-5 h-5 text-foreground flex-shrink-0" />
                 <span>
-                  Remote or hybrid work — flexibility helps me do my best work
+                  Remote or hybrid work - flexibility helps me do my best work
                 </span>
               </li>
             </ul>
