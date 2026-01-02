@@ -15,7 +15,7 @@ const ProjectsSection = () => {
             description="AI-powered SaaS financial management platform with transaction tracking, multi-account support, and real-time analytics dashboard. Complete subscription system with Stripe integration and AI assistant."
             githubLink="https://github.com/Kewinsky/finwise-nextjs"
             liveDemoLink="https://finwise-nextjs.vercel.app"
-            tags={["Next.js 15", "TypeScript", "Supabase", "Stripe", "OpenAI"]}
+            tags={["Next.js", "TypeScript", "Supabase", "Stripe", "OpenAI"]}
             showBottomSeparator={true}
             showRightSeparator={true}
           />

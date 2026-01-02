@@ -29,7 +29,7 @@ const AboutSection = () => {
               When I&apos;m not coding, you&apos;ll probably find me exploring
               new places, trying out different cuisines, or working on side
               projects. I believe that having interests outside of work makes me
-              a better developer—it keeps me curious and helps me think about
+              a better developer - it keeps me curious and helps me think about
               problems from different angles.
             </p>
           </div>
