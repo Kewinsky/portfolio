@@ -12,33 +12,37 @@ const ProjectsSection = () => {
         <ScrollReveal direction="up" delay={0.1} distance={30}>
           <ProjectCard
             title="Finwise"
-            description="Enhanced expense tracking platform with AI-powered insights and robust financial reporting. Built as an improved version of Expense Tracker with modern tech stack and OpenAI integration."
-            githubLink="https://github.com/Kewinsky/finwise"
-            liveDemoLink="https://finwise-demo.vercel.app"
-            tags={["Next.js", "TypeScript", "Supabase", "OpenAI"]}
-            featured
+            description="AI-powered SaaS financial management platform with transaction tracking, multi-account support, and real-time analytics dashboard. Complete subscription system with Stripe integration and AI assistant."
+            githubLink="https://github.com/Kewinsky/finwise-nextjs"
+            liveDemoLink="https://finwise-nextjs.vercel.app"
+            tags={["Next.js 15", "TypeScript", "Supabase", "Stripe", "OpenAI"]}
             showBottomSeparator={true}
             showRightSeparator={true}
           />
         </ScrollReveal>
         <ScrollReveal direction="up" delay={0.2} distance={30}>
           <ProjectCard
-            title="Expense Tracker"
-            description="Full-stack expense management application with CRUD operations and reporting capabilities. Deployed on AWS with robust backend architecture."
-            githubLink="https://github.com/Kewinsky/expense-tracker"
-            tags={["React", "Spring Boot", "MySQL", "AWS"]}
-            fullStack
+            title="Alertino"
+            description="SaaS platform automating apartment hunting in the Polish real estate market with real-time monitoring and instant notifications. Multi-source web scraping system with advanced filtering and dashboard analytics."
+            githubLink="https://github.com/AlertinoApp/alertino"
+            liveDemoLink="https://alertino.vercel.app"
+            tags={[
+              "Next.js",
+              "TypeScript",
+              "Supabase",
+              "Stripe",
+              "TailwindCSS",
+            ]}
             showBottomSeparator={true}
             showRightSeparator={true}
           />
         </ScrollReveal>
         <ScrollReveal direction="up" delay={0.3} distance={30}>
           <ProjectCard
-            title="E-commerce App"
-            description="Frontend e-commerce platform for mechanical keyboard enthusiasts. Clean, responsive design with modern React patterns."
-            githubLink="https://github.com/Kewinsky/mechanix"
-            tags={["React", "JavaScript", "Sass"]}
-            frontend
+            title="Spendee"
+            description="Full-stack personal finance application with JWT authentication and role-based access control. Interactive dashboard with Chart.js visualizations for spending analytics and category breakdowns."
+            githubLink="https://github.com/Kewinsky/expense-tracker"
+            tags={["Java", "Spring Boot", "React", "MySQL", "AWS"]}
             showBottomSeparator={false}
             showRightSeparator={false}
           />
@@ -54,9 +58,6 @@ interface ProjectCardProps {
   githubLink: string;
   liveDemoLink?: string;
   tags: string[];
-  featured?: boolean;
-  fullStack?: boolean;
-  frontend?: boolean;
   showBottomSeparator?: boolean;
   showRightSeparator?: boolean;
 }
@@ -67,35 +68,13 @@ const ProjectCard = ({
   githubLink,
   liveDemoLink,
   tags,
-  featured,
-  fullStack,
-  frontend,
   showBottomSeparator,
   showRightSeparator,
 }: ProjectCardProps) => {
   return (
     <div className="flex flex-col gap-4 p-6 md:p-8 h-full relative">
       <div className="flex flex-col gap-4 flex-grow">
-        <div className="flex flex-row items-center gap-2">
-          <h3 className="text-xl md:text-2xl font-semibold">{title}</h3>
-          <div className="flex gap-2 flex-wrap">
-            {featured && (
-              <span className="inline-block px-2 py-1 bg-muted rounded text-xs font-medium border border-border">
-                Featured
-              </span>
-            )}
-            {fullStack && (
-              <span className="inline-block px-2 py-1 bg-muted rounded text-xs font-medium border border-border">
-                Full-Stack
-              </span>
-            )}
-            {frontend && (
-              <span className="inline-block px-2 py-1 bg-muted rounded text-xs font-medium border border-border">
-                Frontend
-              </span>
-            )}
-          </div>
-        </div>
+        <h3 className="text-xl md:text-2xl font-semibold">{title}</h3>
         <p className="text-sm md:text-base text-muted-foreground leading-relaxed flex-grow">
           {description}
         </p>

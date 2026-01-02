@@ -6,41 +6,55 @@ import ScrollReveal from "./ScrollReveal";
 const technologies = [
   {
     category: "Frontend",
-    skills: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "JavaScript",
-      "TailwindCSS",
-      "Blazor",
-      "C#",
-    ],
+    skills: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS"],
   },
   {
     category: "Backend",
     skills: [
       "Node.js",
-      "Express",
+      "Express.js",
       "Spring Boot",
+      "Java",
       "Hibernate",
-      "PostgreSQL",
-      "MySQL",
+      "SQL",
     ],
   },
   {
-    category: "DevOps & Cloud",
-    skills: ["Docker", "Kubernetes", "AWS", "Azure DevOps", "CI/CD", "Git"],
+    category: "Data & Storage",
+    skills: ["PostgreSQL", "MySQL", "Redis"],
   },
   {
-    category: "Tools",
-    skills: ["Jira", "Postman", "Jest", "JUnit", "Mockito", "GitHub", "GitLab"],
+    category: "Cloud & Infrastructure",
+    skills: [
+      "AWS",
+      "Azure DevOps",
+      "Kubernetes",
+      "Docker",
+      "Terraform",
+      "GitHub Actions",
+    ],
+  },
+  {
+    category: "Testing & Monitoring",
+    skills: ["Jest", "JUnit", "Mockito", "Postman", "Grafana"],
+  },
+  {
+    category: "Tools & Practices",
+    skills: [
+      "Git",
+      "Jira",
+      "Agile",
+      "Scrum",
+      "Clean Architecture",
+      "Microservices",
+    ],
   },
 ];
 
 const StackSection = () => {
   return (
     <Section id="stack" header="stack.">
-      <div className="grid gap-8 md:gap-12 md:grid-cols-2 lg:grid-cols-4 px-4 md:px-8">
+      <div className="grid gap-8 md:gap-12 md:grid-cols-2 lg:grid-cols-3 px-4 md:px-8">
         {technologies.map((tech, index) => (
           <ScrollReveal
             key={tech.category}
