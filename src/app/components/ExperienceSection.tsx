@@ -43,7 +43,7 @@ const ExperienceSection = () => {
       description:
         "Worked on a team responsible for one of the microservices in a financial screening platform. The system consisted of 6 microservices for comprehensive client and transaction screenings on a global scale.",
       tasks: [
-        "Java 17",
+        "Java 19",
         "Spring Boot",
         "Apache Kafka",
         "PostgreSQL",

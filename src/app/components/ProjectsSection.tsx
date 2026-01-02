@@ -15,7 +15,7 @@ const ProjectsSection = () => {
             description="AI-powered SaaS financial management platform with transaction tracking, multi-account support, and real-time analytics dashboard. Complete subscription system with Stripe integration and AI assistant."
             githubLink="https://github.com/Kewinsky/finwise-nextjs"
             liveDemoLink="https://finwise-nextjs.vercel.app"
-            tags={["Next.js", "TypeScript", "Supabase", "Stripe", "OpenAI"]}
+            tags={["Next.js 15", "TypeScript", "Supabase", "Stripe", "OpenAI"]}
             showBottomSeparator={true}
             showRightSeparator={true}
           />
@@ -27,7 +27,7 @@ const ProjectsSection = () => {
             githubLink="https://github.com/AlertinoApp/alertino"
             liveDemoLink="https://alertino.vercel.app"
             tags={[
-              "Next.js",
+              "Next.js 15",
               "TypeScript",
               "Supabase",
               "Stripe",
@@ -42,7 +42,7 @@ const ProjectsSection = () => {
             title="Spendee"
             description="Full-stack personal finance application with JWT authentication and role-based access control. Interactive dashboard with Chart.js visualizations for spending analytics and category breakdowns."
             githubLink="https://github.com/Kewinsky/expense-tracker"
-            tags={["Java", "Spring Boot", "React", "MySQL", "AWS"]}
+            tags={["Java 19", "Spring Boot", "React", "MySQL", "AWS"]}
             showBottomSeparator={false}
             showRightSeparator={false}
           />
@@ -71,10 +71,21 @@ const ProjectCard = ({
   showBottomSeparator,
   showRightSeparator,
 }: ProjectCardProps) => {
+  const getTitleClassName = () => {
+    const baseClasses = "text-xl md:text-2xl font-semibold";
+    if (title === "Finwise") {
+      return `${baseClasses} bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent`;
+    }
+    if (title === "Alertino") {
+      return `${baseClasses} bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-600 bg-clip-text text-transparent`;
+    }
+    return baseClasses;
+  };
+
   return (
     <div className="flex flex-col gap-4 p-6 md:p-8 h-full relative">
       <div className="flex flex-col gap-4 flex-grow">
-        <h3 className="text-xl md:text-2xl font-semibold">{title}</h3>
+        <h3 className={getTitleClassName()}>{title}</h3>
         <p className="text-sm md:text-base text-muted-foreground leading-relaxed flex-grow">
           {description}
         </p>
