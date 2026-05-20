@@ -1,15 +1,34 @@
 "use client";
 
+import { useState } from "react";
 import Section from "./Section";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import ScrollReveal from "./ScrollReveal";
 
 const ProjectsSection = () => {
+  const [showMoreProjects, setShowMoreProjects] = useState(false);
+
   return (
     <Section id="projects" header="projects.">
       <div className="grid grid-cols-1 lg:grid-cols-3">
         <ScrollReveal direction="up" delay={0.1} distance={30}>
+          <ProjectCard
+            title="Vericar"
+            description="Mobile-first app for vehicle history: service and fuel logs, reminders, tires/wheels, documents, marketplace listing generator, and shareable online reports."
+            liveDemoLink="https://www.vericar.pl"
+            tags={[
+              "React Native",
+              "TypeScript",
+              "Supabase",
+              "RevenueCat",
+              "Sentry",
+            ]}
+            showBottomSeparator={true}
+            showRightSeparator={true}
+          />
+        </ScrollReveal>
+        <ScrollReveal direction="up" delay={0.2} distance={30}>
           <ProjectCard
             title="Finwise"
             description="AI-powered SaaS financial management platform with transaction tracking, multi-account support, and real-time analytics dashboard. Complete subscription system with Stripe integration and AI assistant."
@@ -20,7 +39,7 @@ const ProjectsSection = () => {
             showRightSeparator={true}
           />
         </ScrollReveal>
-        <ScrollReveal direction="up" delay={0.2} distance={30}>
+        <ScrollReveal direction="up" delay={0.3} distance={30}>
           <ProjectCard
             title="Alertino"
             description="SaaS platform automating apartment hunting in the Polish real estate market with real-time monitoring and instant notifications. Multi-source web scraping system with advanced filtering and dashboard analytics."
@@ -37,17 +56,39 @@ const ProjectsSection = () => {
             showRightSeparator={true}
           />
         </ScrollReveal>
-        <ScrollReveal direction="up" delay={0.3} distance={30}>
-          <ProjectCard
-            title="Spendee"
-            description="Full-stack personal finance application with JWT authentication and role-based access control. Interactive dashboard with Chart.js visualizations for spending analytics and category breakdowns."
-            githubLink="https://github.com/Kewinsky/expense-tracker"
-            tags={["Java 19", "Spring Boot", "React", "MySQL", "AWS"]}
-            showBottomSeparator={false}
-            showRightSeparator={false}
-          />
-        </ScrollReveal>
       </div>
+
+      {!showMoreProjects && (
+        <div className="flex justify-center py-8 md:py-10 border-t border-border">
+          <button
+            type="button"
+            onClick={() => setShowMoreProjects(true)}
+            className="text-sm md:text-base text-muted-foreground hover:text-foreground transition-colors tracking-wide"
+            aria-controls="projects-extra"
+            aria-expanded={false}
+          >
+            Load more
+          </button>
+        </div>
+      )}
+
+      {showMoreProjects && (
+        <div
+          id="projects-extra"
+          className="grid grid-cols-1 lg:grid-cols-3 border-t border-border"
+        >
+          <ScrollReveal direction="up" delay={0.1} distance={30}>
+            <ProjectCard
+              title="Spendee"
+              description="Full-stack personal finance application with JWT authentication and role-based access control. Interactive dashboard with Chart.js visualizations for spending analytics and category breakdowns."
+              githubLink="https://github.com/Kewinsky/expense-tracker"
+              tags={["Java 19", "Spring Boot", "React", "MySQL", "AWS"]}
+              showBottomSeparator={false}
+              showRightSeparator={false}
+            />
+          </ScrollReveal>
+        </div>
+      )}
     </Section>
   );
 };
@@ -55,7 +96,7 @@ const ProjectsSection = () => {
 interface ProjectCardProps {
   title: string;
   description: string;
-  githubLink: string;
+  githubLink?: string;
   liveDemoLink?: string;
   tags: string[];
   showBottomSeparator?: boolean;
@@ -73,11 +114,14 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   const getTitleClassName = () => {
     const baseClasses = "text-xl md:text-2xl font-semibold";
+    if (title === "Vericar") {
+      return `${baseClasses} bg-gradient-to-r from-[#FFB803] to-[#000000] bg-clip-text text-transparent`;
+    }
     if (title === "Finwise") {
       return `${baseClasses} bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent`;
     }
     if (title === "Alertino") {
-      return `${baseClasses} bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-600 bg-clip-text text-transparent`;
+      return `${baseClasses} bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent`;
     }
     return baseClasses;
   };
@@ -110,14 +154,16 @@ const ProjectCard = ({
               Live Demo →
             </Link>
           )}
-          <Link
-            href={githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-primary transition-colors"
-          >
-            GitHub →
-          </Link>
+          {githubLink && (
+            <Link
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              GitHub →
+            </Link>
+          )}
         </div>
       </div>
       {showBottomSeparator && (
