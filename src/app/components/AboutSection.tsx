@@ -7,7 +7,7 @@ import ScrollReveal from "./ScrollReveal";
 const AboutSection = () => {
   return (
     <Section id="about" header="about.">
-      <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-12 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 md:gap-12 items-start">
         <ScrollReveal direction="right" delay={0.1} distance={30}>
           <div className="space-y-6 md:space-y-8 text-base md:text-lg leading-relaxed text-muted-foreground px-4 md:px-8">
             <p>

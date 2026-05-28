@@ -10,7 +10,7 @@ const ProjectsSection = () => {
   const [showMoreProjects, setShowMoreProjects] = useState(false);
 
   return (
-    <Section id="projects" header="projects.">
+    <Section id="projects" header="projects." isProjectSection>
       <div className="grid grid-cols-1 lg:grid-cols-3">
         <ScrollReveal direction="up" delay={0.1} distance={30}>
           <ProjectCard
@@ -59,7 +59,7 @@ const ProjectsSection = () => {
       </div>
 
       {!showMoreProjects && (
-        <div className="flex justify-center py-8 md:py-10 border-t border-border">
+        <div className="flex justify-center pt-8 md:pt-10 border-t border-border">
           <button
             type="button"
             onClick={() => setShowMoreProjects(true)}
