@@ -1,46 +1,56 @@
 "use client";
 
-import Section from "./Section";
 import Image from "next/image";
+import Section from "./Section";
 import ScrollReveal from "./ScrollReveal";
+
+const credentials = [
+  "MSc Computer Science",
+  "BEng Computer Science",
+  "BEng Ocean Engineering",
+];
 
 const AboutSection = () => {
   return (
     <Section id="about" header="about.">
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 md:gap-12 items-start">
-        <ScrollReveal direction="right" delay={0.1} distance={30}>
-          <div className="space-y-6 md:space-y-8 text-base md:text-lg leading-relaxed text-muted-foreground px-4 md:px-8">
-            <p>
-              I&apos;m a Software Engineer with over 4 years of experience
-              building applications that actually work in production. I&apos;ve
-              worked across different industries and I&apos;ve learned that the
-              best part of this job is figuring out how to solve real problems,
-              not just writing code.
+      <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-16">
+        <ScrollReveal direction="right" delay={0.1} distance={24}>
+          <div className="space-y-6 px-4 text-base leading-relaxed text-muted-foreground md:px-8 md:text-lg">
+            <p className="text-xl leading-relaxed text-foreground md:text-2xl">
+              I&apos;m a software engineer who enjoys turning ambitious ideas
+              into products people can actually use.
             </p>
             <p>
-              Right now I&apos;m working as an Associate Software Engineer, but
-              I&apos;m always looking for new challenges. I enjoy diving into
-              new technologies and domains, and I&apos;m pretty good at getting
-              up to speed quickly. Whether it&apos;s a new framework, a
-              different architecture, or understanding a completely new business
-              domain, I&apos;m up for it.
+              Over the last 4+ years, I&apos;ve worked across frontend,
+              backend, mobile, data, and cloud, taking features from an early
+              concept all the way to production.
             </p>
             <p>
-              When I&apos;m not coding, you&apos;ll probably find me exploring
-              new places, trying out different cuisines, or working on side
-              projects. I believe that having interests outside of work makes me
-              a better developer - it keeps me curious and helps me think about
-              problems from different angles.
+              Today, I combine full-stack development with AI engineering. I
+              build practical AI features and dependable agent workflows with
+              clear boundaries, validation, evaluations, and secure tool use.
             </p>
+            <div className="flex flex-wrap gap-2 pt-2">
+              {credentials.map((credential) => (
+                <span
+                  key={credential}
+                  className="rounded-md border border-border bg-muted/60 px-3 py-2 text-xs font-medium text-foreground md:text-sm"
+                >
+                  {credential}
+                </span>
+              ))}
+            </div>
           </div>
         </ScrollReveal>
-        <ScrollReveal direction="left" delay={0.2} distance={30}>
-          <div className="relative w-full max-w-[300px] mx-auto md:max-w-none md:w-64 lg:w-80 aspect-square">
+
+        <ScrollReveal direction="left" delay={0.2} distance={24}>
+          <div className="relative mx-auto aspect-square w-full max-w-[300px] overflow-hidden rounded-md border border-border lg:max-w-none">
             <Image
               src="/avatar.JPG"
-              alt="Kevin Tao Anh"
+              alt="Kewin Tao Anh"
               fill
-              className="object-cover border border-border"
+              sizes="(max-width: 1024px) 300px, 320px"
+              className="object-cover"
               priority
             />
           </div>

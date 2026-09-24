@@ -7,9 +7,9 @@ import { spaceGrotesk } from "./fonts";
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ||
   "https://portfolio-kewinskys-projects.vercel.app/";
-const siteName = "Kevin Tao Anh - Software Engineer";
+const siteName = "Kewin Tao Anh - Full-Stack Software Engineer & AI Engineer";
 const siteDescription =
-  "Software Engineer with over 4 years of experience building production applications. Specialized in React, Next.js, TypeScript, and full-stack development. Open to full-time positions and contract opportunities.";
+  "Full-Stack Software Engineer and AI Engineer with 4+ years of experience building production-ready web, mobile, and AI-powered products.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   description: siteDescription,
   keywords: [
     "Software Engineer",
+    "AI Engineer",
     "Full Stack Developer",
     "React Developer",
     "Next.js Developer",
@@ -27,15 +28,19 @@ export const metadata: Metadata = {
     "Web Developer",
     "Frontend Developer",
     "Backend Developer",
+    "React Native Developer",
+    "LLM Integration",
+    "AI Agents",
+    "Model Context Protocol",
     "Portfolio",
-    "Kevin Tao Anh",
+    "Kewin Tao Anh",
     "Gdańsk",
     "Poland",
     "Remote Developer",
   ],
-  authors: [{ name: "Kevin Tao Anh", url: siteUrl }],
-  creator: "Kevin Tao Anh",
-  publisher: "Kevin Tao Anh",
+  authors: [{ name: "Kewin Tao Anh", url: siteUrl }],
+  creator: "Kewin Tao Anh",
+  publisher: "Kewin Tao Anh",
   formatDetection: {
     email: false,
     address: false,
@@ -53,7 +58,7 @@ export const metadata: Metadata = {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Kevin Tao Anh - Software Engineer Portfolio",
+        alt: "Kewin Tao Anh - Full-Stack Software Engineer and AI Engineer",
       },
     ],
   },
@@ -87,8 +92,8 @@ export const metadata: Metadata = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Kevin Tao Anh",
-  jobTitle: "Software Engineer",
+  name: "Kewin Tao Anh",
+  jobTitle: "Full-Stack Software Engineer and AI Engineer",
   url: siteUrl,
   image: `${siteUrl}/avatar.JPG`,
   sameAs: [
@@ -107,13 +112,29 @@ const structuredData = {
     "TypeScript",
     "JavaScript",
     "Node.js",
+    "React Native",
+    "Supabase",
     "Full Stack Development",
+    "AI Engineering",
+    "LLM Integration",
+    "AI Agents",
+    "Model Context Protocol",
     "Web Development",
   ],
-  alumniOf: {
-    "@type": "Organization",
-    name: "Software Engineering",
-  },
+  hasCredential: [
+    {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "MSc in Computer Science",
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "BEng in Computer Science",
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "BEng in Ocean Engineering",
+    },
+  ],
 };
 
 export default function RootLayout({

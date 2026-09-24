@@ -22,12 +22,6 @@ const ProjectsSection = dynamic(() => import("./components/ProjectsSection"), {
 const StackSection = dynamic(() => import("./components/StackSection"), {
   loading: () => <div className="min-h-[400px]" />,
 });
-const LookingForSection = dynamic(
-  () => import("./components/LookingForSection"),
-  {
-    loading: () => <div className="min-h-[400px]" />,
-  }
-);
 const ContactSection = dynamic(() => import("./components/ContactSection"), {
   loading: () => <div className="min-h-[400px]" />,
 });
@@ -40,7 +34,6 @@ const sections: Array<{
   { Component: ExperienceSection, delay: 0.15 },
   { Component: ProjectsSection, delay: 0.2 },
   { Component: StackSection, delay: 0.1 },
-  { Component: LookingForSection, delay: 0.15 },
   { Component: ContactSection, delay: 0.1 },
 ];
 

@@ -5,72 +5,94 @@ import ScrollReveal from "./ScrollReveal";
 
 const technologies = [
   {
-    category: "Frontend",
-    skills: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS"],
+    category: "Frontend & Mobile",
+    skills: [
+      "React",
+      "Next.js",
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Tailwind CSS",
+    ],
   },
   {
-    category: "Backend",
+    category: "Backend & Data",
     skills: [
       "Node.js",
-      "Express.js",
-      "Spring Boot",
       "Java",
-      "Hibernate",
-      "SQL",
+      "Spring Boot",
+      "Supabase",
+      "PostgreSQL",
+      "MySQL",
+      "Redis",
     ],
   },
   {
-    category: "Data & Storage",
-    skills: ["PostgreSQL", "MySQL", "Redis"],
-  },
-  {
-    category: "Cloud & Infrastructure",
+    category: "Cloud & Quality",
     skills: [
       "AWS",
-      "Azure DevOps",
-      "Kubernetes",
       "Docker",
-      "Terraform",
+      "Kubernetes",
       "GitHub Actions",
+      "Jest",
+      "Sentry",
     ],
   },
   {
-    category: "Testing & Monitoring",
-    skills: ["Jest", "JUnit", "Mockito", "Postman", "Grafana"],
-  },
-  {
-    category: "Tools & Practices",
+    category: "AI Engineering",
     skills: [
-      "Git",
-      "Jira",
-      "Agile",
-      "Scrum",
-      "Clean Architecture",
-      "Microservices",
+      "OpenAI API",
+      "LLM Integrations",
+      "AI Agents",
+      "Tool Use",
+      "Structured Outputs",
+      "Evals",
+      "Guardrails",
     ],
+  },
+  {
+    category: "Agentic Workflows",
+    skills: [
+      "Skills",
+      "MCP",
+      "Context Engineering",
+      "Prompt Engineering",
+      "Scoped Agents",
+      "Approval Gates",
+    ],
+  },
+  {
+    category: "AI Development Tools",
+    skills: ["Cursor", "Codex", "GitHub Copilot", "Claude Code"],
   },
 ];
 
 const StackSection = () => {
   return (
-    <Section id="stack" header="stack.">
-      <div className="grid gap-8 md:gap-12 md:grid-cols-2 lg:grid-cols-3 px-4 md:px-8">
-        {technologies.map((tech, index) => (
+    <Section id="stack" header="stack & AI.">
+      <div className="mb-10 max-w-3xl px-4 text-base leading-relaxed text-muted-foreground md:px-8 md:text-lg">
+        I use AI as an engineering capability, not a shortcut. That means
+        reliable workflows, scoped tool access, runtime validation,
+        deterministic tests, evaluations, and human approval where it matters.
+      </div>
+
+      <div className="grid gap-8 px-4 md:grid-cols-2 md:gap-12 md:px-8 lg:grid-cols-3">
+        {technologies.map((technology, index) => (
           <ScrollReveal
-            key={tech.category}
+            key={technology.category}
             direction="up"
-            delay={index * 0.1}
-            distance={30}
+            delay={index * 0.07}
+            distance={24}
           >
             <div className="space-y-4">
-              <h3 className="text-lg md:text-xl font-semibold">
-                {tech.category}
+              <h3 className="text-lg font-semibold md:text-xl">
+                {technology.category}
               </h3>
               <div className="flex flex-wrap gap-2">
-                {tech.skills.map((skill) => (
+                {technology.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="inline-block px-3 py-1 text-xs md:text-sm bg-muted rounded border border-border"
+                    className="rounded border border-border bg-muted px-3 py-1 text-xs md:text-sm"
                   >
                     {skill}
                   </span>

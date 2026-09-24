@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useState } from "react";
-import axios from "axios";
 import Link from "next/link";
 import React from "react";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
@@ -68,11 +67,18 @@ const ContactSection = () => {
     setPending(true);
     setError("");
     try {
-      await axios.post("/api/submitContactForm", formData, {
+      const response = await fetch("/api/submitContactForm", {
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        body: JSON.stringify(formData),
       });
+
+      if (!response.ok) {
+        throw new Error("Contact form submission failed");
+      }
+
       setIsSuccess(true);
       reset();
     } catch {
@@ -89,17 +95,17 @@ const ContactSection = () => {
         <div className="max-w-4xl px-4 sm:px-6 md:px-8 lg:px-12">
           <div className="mb-8 sm:mb-12 md:mb-16">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-3 sm:mb-4 md:mb-6">
-              Let&apos;s discuss opportunities
+              Let&apos;s build something meaningful
             </h1>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground mb-6 sm:mb-8 md:mb-10 leading-relaxed">
-              I&apos;m open to full-time positions and contract opportunities.
+              Have a role, product, or AI challenge in mind? Let&apos;s talk.
             </p>
             <Button
               onClick={() => setIsModalOpen(true)}
               size="lg"
               className="text-sm sm:text-base md:text-lg w-full sm:w-auto"
             >
-              Get In Touch →
+              Get in touch →
             </Button>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12 pt-6 sm:pt-8 md:pt-10 border-t">
@@ -283,12 +289,11 @@ const ContactSection = () => {
                     transition={{ duration: 0.2 }}
                   >
                     <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 pr-8 sm:pr-10">
-                      Say Hello!
+                      Start a conversation
                     </h1>
                     <p className="mb-4 sm:mb-6 text-sm sm:text-base text-muted-foreground leading-relaxed">
-                      I&apos;m open to full-time positions and contract
-                      opportunities. Let&apos;s discuss how I can contribute to
-                      your team.
+                      Tell me about the role, product, or problem you&apos;re
+                      working on. I&apos;ll get back to you soon.
                     </p>
                     <form
                       onSubmit={handleSubmit(onSubmit)}

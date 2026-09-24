@@ -1,57 +1,36 @@
-import Section from "./Section";
 import { Check } from "lucide-react";
+import Section from "./Section";
+
+const priorities = [
+  "Full-stack and AI engineering work with real product impact",
+  "A collaborative team that values ownership and thoughtful execution",
+  "Modern engineering practices, reliable systems, and continuous learning",
+];
 
 const LookingForSection = () => {
   return (
-    <Section id="looking-for" header="what i'm looking for?">
-      <div className="max-w-4xl">
-        <div className="space-y-6 md:space-y-8 text-base md:text-lg leading-relaxed text-muted-foreground px-4 md:px-8">
-          <p>
-            I&apos;m looking for full-time Software Engineer positions that
-            challenge me and let me use what I&apos;ve learned across different
-            projects. I want to work on something that matters and with people I
-            can learn from.
-          </p>
-          <div className="mt-8 md:mt-12">
-            <h3 className="text-base md:text-lg font-semibold mb-6 text-foreground">
-              What matters to me:
-            </h3>
-            <ul className="space-y-4 list-none pl-0">
-              <li className="flex items-start gap-3">
-                <Check className="mt-1 w-5 h-5 text-foreground flex-shrink-0" />
-                <span>
-                  Working with modern tech stacks - I like staying current and
-                  learning new things
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="mt-1 w-5 h-5 text-foreground flex-shrink-0" />
-                <span>
-                  Teams where I can both contribute and learn - collaboration
-                  over competition
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="mt-1 w-5 h-5 text-foreground flex-shrink-0" />
-                <span>
-                  Projects that actually make a difference - I want to build
-                  things people use
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="mt-1 w-5 h-5 text-foreground flex-shrink-0" />
-                <span>
-                  Remote or hybrid work - flexibility helps me do my best work
-                </span>
-              </li>
-            </ul>
-          </div>
-          <p className="mt-8 md:mt-12">
-            I&apos;m based in Gdańsk, Poland, but I&apos;m open to remote
-            positions anywhere. Location isn&apos;t a dealbreaker if the work is
-            interesting.
-          </p>
-        </div>
+    <Section id="looking-for" header="what's next.">
+      <div className="max-w-4xl px-4 md:px-8">
+        <p className="max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+          I&apos;m open to full-time and contract opportunities where I can
+          combine strong full-stack fundamentals with practical AI engineering
+          to ship products people value.
+        </p>
+
+        <ul className="mt-8 grid gap-4 md:grid-cols-3">
+          {priorities.map((priority) => (
+            <li
+              key={priority}
+              className="flex gap-3 rounded-md border border-border bg-muted/40 p-4 text-sm leading-relaxed text-muted-foreground"
+            >
+              <Check
+                className="mt-0.5 size-5 flex-shrink-0 text-foreground"
+                aria-hidden="true"
+              />
+              <span>{priority}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </Section>
   );
